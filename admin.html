@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BTC Realty — Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ══ LOGIN SCREEN ══ -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">
+      <span class="logo-btc">BTC</span>
+      <span class="logo-tag">Admin Portal</span>
+    </div>
+    <h2 class="login-title">Welcome Back</h2>
+    <p class="login-sub">Sign in to manage your listings</p>
+
+    <div class="login-field">
+      <label>Username</label>
+      <input type="text" id="loginUser" placeholder="admin" class="login-input"/>
+    </div>
+    <div class="login-field">
+      <label>Password</label>
+      <div class="pw-wrap">
+        <input type="password" id="loginPass" placeholder="••••••••" class="login-input"/>
+        <button class="pw-toggle" id="pwToggle" type="button">
+          <svg id="eyeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="login-error" id="loginError">Invalid username or password</div>
+
+    <button class="login-btn" id="loginBtn">Sign In</button>
+    <p class="login-hint">Default: admin / admin123</p>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD ══ -->
+<div class="dashboard hidden" id="dashboard">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-logo">
+      <span class="logo-btc">BTC</span>
+      <span class="logo-tag">Admin</span>
+    </div>
+
+    <nav class="sb-nav">
+      <button class="sb-link active" data-page="overview">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Overview
+      </button>
+      <button class="sb-link" data-page="properties">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        Properties
+      </button>
+      <button class="sb-link" data-page="inquiries">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Inquiries
+      </button>
+      <button class="sb-link" data-page="analytics">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Analytics
+      </button>
+    </nav>
+
+    <button class="sb-logout" id="logoutBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Logout
+    </button>
+  </aside>
+
+  <!-- Main -->
+  <div class="dash-main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="topbar-title" id="topbarTitle">Overview</div>
+      <div class="topbar-right">
+        <div class="topbar-admin">
+          <div class="admin-avatar">A</div>
+          <span>Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── PAGE: OVERVIEW ── -->
+    <div class="page active" id="page-overview">
+
+      <div class="page-header">
+        <h1 class="page-title">Dashboard Overview</h1>
+        <p class="page-sub">Welcome back — here's what's happening today.</p>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(200,165,90,0.12);color:var(--gold)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <div class="kpi-info">
+            <div class="kpi-num" data-target="124">0</div>
+            <div class="kpi-label">Total Listings</div>
+          </div>
+          <div class="kpi-trend up">+8 this month</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(110,255,168,0.1);color:#6effa8">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="kpi-info">
+            <div class="kpi-num" data-target="38">0</div>
+            <div class="kpi-label">New Inquiries</div>
+          </div>
+          <div class="kpi-trend up">+12 this week</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(126,184,255,0.1);color:#7eb8ff">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="kpi-info">
+            <div class="kpi-num" data-target="856">0</div>
+            <div class="kpi-label">Total Clients</div>
+          </div>
+          <div class="kpi-trend up">+24 this month</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(255,179,71,0.1);color:#ffb347">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="kpi-info">
+            <div class="kpi-num" data-target="480" data-prefix="₦" data-suffix="M">0</div>
+            <div class="kpi-label">Total Sales Value</div>
+          </div>
+          <div class="kpi-trend up">+₦42M this month</div>
+        </div>
+      </div>
+
+      <!-- Recent Inquiries table -->
+      <div class="dash-card">
+        <div class="dash-card-header">
+          <h3>Recent Inquiries</h3>
+          <button class="dash-link" data-goto="inquiries">View All</button>
+        </div>
+        <div class="table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Property</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Aminu Bello</strong></td>
+                <td>Luxury 5-Bed Villa, Maitama</td>
+                <td>Buying</td>
+                <td>Today, 10:24am</td>
+                <td><span class="badge-status new">New</span></td>
+              </tr>
+              <tr>
+                <td><strong>Fatima Usman</strong></td>
+                <td>3-Bed Apartment, Lekki</td>
+                <td>Renting</td>
+                <td>Today, 8:05am</td>
+                <td><span class="badge-status new">New</span></td>
+              </tr>
+              <tr>
+                <td><strong>Chidi Okafor</strong></td>
+                <td>Land — 1,000sqm, Lugbe</td>
+                <td>Buying</td>
+                <td>Yesterday</td>
+                <td><span class="badge-status read">In Progress</span></td>
+              </tr>
+              <tr>
+                <td><strong>Hauwa Lawal</strong></td>
+                <td>2-Bed Shortlet, Wuse 2</td>
+                <td>Shortlet</td>
+                <td>Yesterday</td>
+                <td><span class="badge-status done">Closed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── PAGE: PROPERTIES ── -->
+    <div class="page" id="page-properties">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Properties</h1>
+          <p class="page-sub">Manage all your listings here.</p>
+        </div>
+        <button class="add-btn" id="addPropBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Property
+        </button>
+      </div>
+
+      <!-- Add Property Form -->
+      <div class="add-form-wrap hidden" id="addPropForm">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3>New Property</h3>
+            <button class="dash-link" id="cancelProp">Cancel</button>
+          </div>
+          <div class="add-form-grid">
+            <div class="form-group">
+              <label>Property Title</label>
+              <input type="text" class="adm-input" placeholder="e.g. Luxury 5-Bed Villa" id="propTitle"/>
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" class="adm-input" placeholder="e.g. Maitama, Abuja" id="propLocation"/>
+            </div>
+            <div class="form-group">
+              <label>Price (₦)</label>
+              <input type="text" class="adm-input" placeholder="e.g. 180,000,000" id="propPrice"/>
+            </div>
+            <div class="form-group">
+              <label>Type</label>
+              <select class="adm-input" id="propType">
+                <option value="" disabled selected>Select type</option>
+                <option>For Sale</option>
+                <option>For Rent</option>
+                <option>Land</option>
+                <option>Shortlet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Bedrooms</label>
+              <input type="number" class="adm-input" placeholder="e.g. 4" id="propBeds"/>
+            </div>
+            <div class="form-group">
+              <label>Bathrooms</label>
+              <input type="number" class="adm-input" placeholder="e.g. 3" id="propBaths"/>
+            </div>
+          </div>
+          <button class="add-btn" id="savePropBtn" style="margin-top:8px">Save Property</button>
+        </div>
+      </div>
+
+      <!-- Properties Table -->
+      <div class="dash-card">
+        <div class="table-wrap">
+          <table class="dash-table" id="propTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Beds</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="propTableBody">
+              <tr>
+                <td>1</td>
+                <td><strong>Luxury 5-Bed Villa</strong></td>
+                <td>Maitama, Abuja</td>
+                <td class="gold">₦180,000,000</td>
+                <td><span class="badge-status done">For Sale</span></td>
+                <td>5</td>
+                <td class="action-cell">
+                  <button class="tbl-btn edit">Edit</button>
+                  <button class="tbl-btn del">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><strong>Modern 3-Bed Apartment</strong></td>
+                <td>Lekki, Lagos</td>
+                <td class="gold">₦4,500,000/yr</td>
+                <td><span class="badge-status read">For Rent</span></td>
+                <td>3</td>
+                <td class="action-cell">
+                  <button class="tbl-btn edit">Edit</button>
+                  <button class="tbl-btn del">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>1,000sqm Titled Land</strong></td>
+                <td>Lugbe, Abuja</td>
+                <td class="gold">₦28,000,000</td>
+                <td><span class="badge-status new">Land</span></td>
+                <td>—</td>
+                <td class="action-cell">
+                  <button class="tbl-btn edit">Edit</button>
+                  <button class="tbl-btn del">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── PAGE: INQUIRIES ── -->
+    <div class="page" id="page-inquiries">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Inquiries</h1>
+          <p class="page-sub">All messages from potential clients.</p>
+        </div>
+        <div class="inq-filters">
+          <button class="inq-filter active" data-filter="all">All</button>
+          <button class="inq-filter" data-filter="new">New</button>
+          <button class="inq-filter" data-filter="read">In Progress</button>
+          <button class="inq-filter" data-filter="done">Closed</button>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <div class="table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Interest</th>
+                <th>Property</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="inqTableBody">
+              <tr data-status="new">
+                <td><strong>Aminu Bello</strong></td>
+                <td>0810 000 0001</td>
+                <td>Buying</td>
+                <td>5-Bed Villa, Maitama</td>
+                <td>Today 10:24am</td>
+                <td><span class="badge-status new">New</span></td>
+                <td class="action-cell">
+                  <button class="tbl-btn edit">Reply</button>
+                  <button class="tbl-btn del">Close</button>
+                </td>
+              </tr>
+              <tr data-status="new">
+                <td><strong>Fatima Usman</strong></td>
+                <td>0802 111 2233</td>
+                <td>Renting</td>
+                <td>3-Bed Apt, Lekki</td>
+                <td>Today 8:05am</td>
+                <td><span class="badge-status new">New</span></td>
+                <td class="action-cell">
+                  <button class="tbl-btn edit">Reply</button>
+                  <button class="tbl-btn del">Close</button>
+                </td>
+              </tr>
+              <tr data-status="read">
+                <td><strong>Chidi Okafor</strong></td>
+                <td>0703 445 6677</td>
+                <td>Buying</td>
+                <td>Land, Lugbe</td>
+                <td>Yesterday</td>
+                <td><span class="badge-status read">In Progress</span></td>
+                <td class="action-cell">
+                  <button class="tbl-btn edit">Reply</button>
+                  <button class="tbl-btn del">Close</button>
+                </td>
+              </tr>
+              <tr data-status="done">
+                <td><strong>Hauwa Lawal</strong></td>
+                <td>0905 223 4455</td>
+                <td>Shortlet</td>
+                <td>2-Bed, Wuse 2</td>
+                <td>2 days ago</td>
+                <td><span class="badge-status done">Closed</span></td>
+                <td class="action-cell">
+                  <button class="tbl-btn edit">View</button>
+                  <button class="tbl-btn del">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── PAGE: ANALYTICS ── -->
+    <div class="page" id="page-analytics">
+
+      <div class="page-header">
+        <h1 class="page-title">Analytics</h1>
+        <p class="page-sub">Performance overview for this month.</p>
+      </div>
+
+      <!-- Mini KPIs -->
+      <div class="kpi-grid" style="margin-bottom:28px">
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-num">68%</div>
+            <div class="kpi-label">Inquiry Conversion</div>
+          </div>
+          <div class="kpi-trend up">↑ 4% vs last month</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-num">4.2</div>
+            <div class="kpi-label">Avg Days to Close</div>
+          </div>
+          <div class="kpi-trend up">↓ 0.8 days faster</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-num">92%</div>
+            <div class="kpi-label">Client Satisfaction</div>
+          </div>
+          <div class="kpi-trend up">↑ 2% vs last month</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-num">18</div>
+            <div class="kpi-label">Deals Closed</div>
+          </div>
+          <div class="kpi-trend up">+3 vs last month</div>
+        </div>
+      </div>
+
+      <!-- Bar Chart -->
+      <div class="dash-card">
+        <div class="dash-card-header">
+          <h3>Monthly Inquiries — 2024</h3>
+        </div>
+        <div class="bar-chart" id="barChart">
+          <div class="bar-group">
+            <div class="bar" style="--h:45%"><span class="bar-tip">18</span></div>
+            <div class="bar-label">Jan</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="--h:60%"><span class="bar-tip">24</span></div>
+            <div class="bar-label">Feb</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="--h:50%"><span class="bar-tip">20</span></div>
+            <div class="bar-label">Mar</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="--h:75%"><span class="bar-tip">30</span></div>
+            <div class="bar-label">Apr</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="--h:65%"><span class="bar-tip">26</span></div>
+            <div class="bar-label">May</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="--h:90%"><span class="bar-tip">36</span></div>
+            <div class="bar-label">Jun</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="--h:80%"><span class="bar-tip">32</span></div>
+            <div class="bar-label">Jul</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar active" style="--h:100%"><span class="bar-tip">38</span></div>
+            <div class="bar-label">Aug</div>
+          </div>
+        </div>
+      </div>
+
+<!-- Property type breakdown -->
+      <div class="dash-card" style="margin-top:24px">
+        <div class="dash-card-header">
+          <h3>Listings by Type</h3>
+        </div>
+        <div class="breakdown-list">
+          <div class="breakdown-item">
+            <span class="bd-label">For Sale</span>
+            <div class="bd-bar-wrap">
+              <div class="bd-bar" style="--w:65%;--c:#C8A55A"></div>
+            </div>
+            <span class="bd-pct">65%</span>
+          </div>
+          <div class="breakdown-item">
+            <span class="bd-label">For Rent</span>
+            <div class="bd-bar-wrap">
+              <div class="bd-bar" style="--w:20%;--c:#6effa8"></div>
+            </div>
+            <span class="bd-pct">20%</span>
+          </div>
+          <div class="breakdown-item">
+            <span class="bd-label">Land</span>
+            <div class="bd-bar-wrap">
+              <div class="bd-bar" style="--w:10%;--c:#ffb347"></div>
+            </div>
+            <span class="bd-pct">10%</span>
+          </div>
+          <div class="breakdown-item">
+            <span class="bd-label">Shortlet</span>
+            <div class="bd-bar-wrap">
+              <div class="bd-bar" style="--w:5%;--c:#7eb8ff"></div>
+            </div>
+            <span class="bd-pct">5%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /dash-main -->
+
+</div><!-- /dashboard -->
+
+<script src="admin.js"></script>
+</body>
+</html>

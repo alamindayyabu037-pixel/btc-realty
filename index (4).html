@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BTC Realty — Better Than Choice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav id="navbar">
+  <a class="logo" href="#">
+    <span class="logo-btc">BTC</span>
+    <span class="logo-tag">Better Than Choice</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Properties</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <button class="nav-btn">List Property</button>
+
+  <div class="hamburger" id="ham">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" id="mMenu">
+
+  <!-- Close button -->
+  <button class="mob-close" id="mobClose" aria-label="Close menu">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.5"
+         stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <a href="#" class="mob-link">Home</a>
+  <a href="#" class="mob-link">Properties</a>
+  <a href="#" class="mob-link">About</a>
+  <a href="#" class="mob-link">Contact</a>
+  <button class="mob-cta">List Property</button>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+
+  <div class="hero-content">
+
+
+
+    <!-- Headline -->
+    <h1>
+      
+      <em>Find Where You Belong</em>
+      
+    </h1>
+         <!-- Badge -->
+    <div class="hero-badge">
+      <div class="badge-dot"></div>
+      <span>Nigeria's Premium Real Estate</span>
+    </div>
+    <!-- Subtitle -->
+    <p class="hero-sub">
+      BTC connects you to <strong>handpicked premium properties</strong> across Nigeria.
+      Buy, rent, or invest — with total confidence.
+    </p>
+
+    <!-- Search Box -->
+    <div class="search-wrap">
+      <div class="search-box">
+
+        <div class="s-field">
+          <label for="loc">Location</label>
+          <input id="loc" type="text" placeholder="Abuja, Lagos, Kano…" />
+        </div>
+
+        <div class="s-div"></div>
+
+        <div class="s-field">
+          <label for="typ">Property Type</label>
+          <select id="typ">
+            <option value="" disabled selected>Any Type</option>
+            <option>House / Villa</option>
+            <option>Apartment / Flat</option>
+            <option>Land / Plot</option>
+            <option>Commercial</option>
+            <option>Office Space</option>
+          </select>
+        </div>
+
+        <div class="s-div"></div>
+
+        <div class="s-field">
+          <label for="bdg">Budget</label>
+          <select id="bdg">
+            <option value="" disabled selected>Any Budget</option>
+            <option>Below ₦5M</option>
+            <option>₦5M – ₦20M</option>
+            <option>₦20M – ₦50M</option>
+            <option>₦50M – ₦100M</option>
+            <option>Above ₦100M</option>
+          </select>
+        </div>
+
+        <button class="s-btn" id="searchBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          Search
+        </button>
+      </div>
+
+      <!-- Quick filter chips -->
+      <div class="chips">
+        <span class="chips-lbl">Quick:</span>
+        <span class="chip active">For Sale</span>
+        <span class="chip">For Rent</span>
+        <span class="chip">New Listings</span>
+        <span class="chip">Shortlets</span>
+        <span class="chip">Land</span>
+      </div>
+    </div>
+
+  </div><!-- /hero-content -->
+
+  <!-- Stats Bar -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-n">1,200<sup>+</sup></div>
+      <div class="stat-l">Properties Listed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">850<sup>+</sup></div>
+      <div class="stat-l">Happy Clients</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">12 <small>yrs</small></div>
+      <div class="stat-l">Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">24<small>/7</small></div>
+      <div class="stat-l">Support</div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <div class="scroll-mouse"></div>
+    <span>Scroll</span>
+  </div>
+
+</section>
+
+<!-- ══ PROPERTIES SECTION ══ -->
+<section class="props" id="properties">
+
+  <!-- Header -->
+  <div class="props-header reveal">
+    <div class="props-label">
+      <span class="label-line"></span>
+      <span>Featured Listings</span>
+      <span class="label-line"></span>
+    </div>
+    <h2 class="props-title">
+      Properties Curated For You
+    </h2>
+    <p class="props-sub">
+      Every listing is verified, priced fairly, and ready for viewing.
+    </p>
+  </div>
+
+  <!-- Filter Tabs -->
+  <div class="props-tabs reveal">
+    <button class="tab active" data-filter="all">All</button>
+    <button class="tab" data-filter="sale">For Sale</button>
+    <button class="tab" data-filter="rent">For Rent</button>
+    <button class="tab" data-filter="land">Land</button>
+    <button class="tab" data-filter="shortlet">Shortlet</button>
+  </div>
+
+  <!-- Cards Grid -->
+  <div class="props-grid" id="propsGrid">
+
+    <div class="prop-card reveal" data-type="sale">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Luxury Villa Abuja" loading="lazy"/>
+        <span class="card-badge sale">For Sale</span>
+        <button class="card-fav" aria-label="Save">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-location">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Maitama, Abuja
+        </div>
+        <h3 class="card-title">Luxury 5-Bed Villa</h3>
+        <div class="card-price">₦180,000,000</div>
+        <div class="card-features">
+          <span>🛏 5 Beds</span>
+          <span>🚿 4 Baths</span>
+          <span>📐 450 m²</span>
+        </div>
+        <a href="property-details.html?id=1" class="card-btn" >View Details</a>
+      </div>
+    </div>
+
+    <div class="prop-card reveal" data-type="rent">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Modern Apartment Lagos" loading="lazy"/>
+        <span class="card-badge rent">For Rent</span>
+        <button class="card-fav" aria-label="Save">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-location">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Lekki Phase 1, Lagos
+        </div>
+        <h3 class="card-title">Modern 3-Bed Apartment</h3>
+        <div class="card-price">₦4,500,000 <span>/yr</span></div>
+        <div class="card-features">
+          <span>🛏 3 Beds</span>
+          <span>🚿 2 Baths</span>
+          <span>📐 180 m²</span>
+        </div>
+        <a href="property-details.html?id=1" class="card-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="prop-card reveal" data-type="sale">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80" alt="Executive Home Kano" loading="lazy"/>
+        <span class="card-badge sale">For Sale</span>
+        <button class="card-fav" aria-label="Save">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-location">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Nassarawa GRA, Kano
+        </div>
+        <h3 class="card-title">Executive 4-Bed Home</h3>
+        <div class="card-price">₦65,000,000</div>
+        <div class="card-features">
+          <span>🛏 4 Beds</span>
+          <span>🚿 3 Baths</span>
+          <span>📐 300 m²</span>
+        </div>
+        <a href="#" class="card-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="prop-card reveal" data-type="shortlet">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Shortlet Abuja" loading="lazy"/>
+        <span class="card-badge shortlet">Shortlet</span>
+        <button class="card-fav" aria-label="Save">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-location">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Wuse 2, Abuja
+        </div>
+        <h3 class="card-title">Premium 2-Bed Shortlet</h3>
+        <div class="card-price">₦85,000 <span>/night</span></div>
+        <div class="card-features">
+          <span>🛏 2 Beds</span>
+          <span>🚿 2 Baths</span>
+          <span>📐 120 m²</span>
+        </div>
+        <a href="#" class="card-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="prop-card reveal" data-type="land">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" alt="Land Abuja" loading="lazy"/>
+        <span class="card-badge land">Land</span>
+        <button class="card-fav" aria-label="Save">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-location">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Lugbe, Abuja
+        </div>
+        <h3 class="card-title">1,000 sqm Titled Land</h3>
+        <div class="card-price">₦28,000,000</div>
+        <div class="card-features">
+          <span>📐 1,000 m²</span>
+          <span>📄 C of O</span>
+          <span>✅ Dry Land</span>
+        </div>
+        <a href="#" class="card-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="prop-card reveal" data-type="rent">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80" alt="Flat Port Harcourt" loading="lazy"/>
+        <span class="card-badge rent">For Rent</span>
+        <button class="card-fav" aria-label="Save">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-location">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          GRA, Port Harcourt
+        </div>
+        <h3 class="card-title">Serviced 2-Bed Flat</h3>
+        <div class="card-price">₦2,800,000 <span>/yr</span></div>
+        <div class="card-features">
+          <span>🛏 2 Beds</span>
+          <span>🚿 2 Baths</span>
+          <span>📐 140 m²</span>
+        </div>
+        <a href="#" class="card-btn">View Details</a>
+      </div>
+    </div>
+
+  </div><!-- /props-grid -->
+
+  <!-- View All -->
+  <div class="props-footer reveal">
+    <a href="#" class="view-all-btn">
+      View All Properties
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+<br>
+<br>
+
+<!-- ══ ABOUT SECTION ══ -->
+<section class="about" id="about">
+
+  <!-- Left — Image side -->
+  <div class="about-left">
+
+    <div class="about-img-main reveal-left">
+      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=85"
+           alt="BTC Realty Office"/>
+      <!-- Gold frame accent -->
+      <div class="about-img-frame"></div>
+    </div>
+
+    <!-- Floating stat card -->
+    <div class="about-float-card reveal-left">
+      <div class="float-num">12+</div>
+      <div class="float-label">Years of Excellence</div>
+      <div class="float-line"></div>
+      <div class="float-sub">Trusted across Nigeria</div>
+    </div>
+
+    <!-- Second image -->
+    <div class="about-img-second reveal-left">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"
+           alt="BTC Team"/>
+    </div>
+
+  </div>
+
+  <!-- Right — Content side -->
+  <div class="about-right">
+
+    <div class="about-label reveal-right">
+      <span class="label-line-dark"></span>
+      <span>Who We Are</span>
+      <span class="label-line-dark"></span>
+    </div>
+
+    <h2 class="about-title reveal-right">
+      Nigeria's Most <em>Trusted</em><br>
+      Real Estate Partner
+    </h2>
+
+    <p class="about-desc reveal-right">
+      BTC Realty was founded on a simple belief — that finding
+      your perfect property should be <strong>effortless, transparent,
+      and rewarding.</strong> For over 12 years, we have connected
+      thousands of Nigerians to homes, investments, and opportunities
+      across the country.
+    </p>
+
+    <p class="about-desc reveal-right">
+      From luxury villas in Maitama to affordable flats in Lugbe,
+      from prime land in Kano to commercial spaces in Lagos —
+      we cover it all with professionalism and integrity.
+    </p>
+
+    <!-- Values -->
+    <div class="about-values reveal-right">
+
+      <div class="value-item">
+        <div class="value-icon">🤝</div>
+        <div>
+          <div class="value-title">Integrity First</div>
+          <div class="value-desc">Every deal is transparent — no hidden charges, no surprises.</div>
+        </div>
+      </div>
+
+      <div class="value-item">
+        <div class="value-icon">🏆</div>
+        <div>
+          <div class="value-title">Excellence Always</div>
+          <div class="value-desc">We don't just find properties — we find the right ones.</div>
+        </div>
+      </div>
+
+      <div class="value-item">
+        <div class="value-icon">⚡</div>
+        <div>
+          <div class="value-title">Fast & Reliable</div>
+          <div class="value-desc">From search to keys in hand — we move at your speed.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats row -->
+    <div class="about-stats reveal-right">
+      <div class="about-stat">
+        <div class="about-stat-n">1,200<span>+</span></div>
+        <div class="about-stat-l">Properties Sold</div>
+      </div>
+      <div class="about-stat-div"></div>
+      <div class="about-stat">
+        <div class="about-stat-n">850<span>+</span></div>
+        <div class="about-stat-l">Happy Clients</div>
+      </div>
+      <div class="about-stat-div"></div>
+      <div class="about-stat">
+        <div class="about-stat-n">24<span>/7</span></div>
+        <div class="about-stat-l">Support</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta reveal-right">
+      <a href="#properties" class="about-btn-dark">View Properties</a>
+      <a href="#contact" class="about-btn-outline">Talk to an Agent</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+</section<!-- ══ CONTACT SECTION ══ -->
+<section class="contact" id="contact">
+
+  <!-- Left — Dark side -->
+  <div class="contact-left">
+
+    <div class="contact-label">
+      <span class="label-line"></span>
+      <span>Get In Touch</span>
+      <span class="label-line"></span>
+    </div>
+
+    <h2 class="contact-title">
+      Let's Find Your<br>
+      <em>Perfect Home</em>
+    </h2>
+
+    <p class="contact-sub">
+      Whether you're buying, renting, or investing —
+      our agents are ready to guide you every step of the way.
+    </p>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="info-label">Call Us</div>
+          <a href="tel:+2348100000000" class="info-val">+234 810 000 0000</a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div>
+          <div class="info-label">Email Us</div>
+          <a href="mailto:info@btcrealty.com" class="info-val">info@btcrealty.com</a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <div class="info-label">Visit Us</div>
+          <span class="info-val">Plot 45, Maitama, Abuja</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div>
+          <div class="info-label">Working Hours</div>
+          <span class="info-val">Mon – Sat, 8am – 6pm</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- WhatsApp big button -->
+    <a href="https://wa.me/2348100000000?text=Hello%20BTC%20Realty%2C%20I%20need%20help%20finding%20a%20property."
+       class="wa-btn" target="_blank">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Chat on WhatsApp Now
+    </a>
+
+  </div>
+
+  <!-- Right — Light side (form) -->
+  <div class="contact-right">
+
+    <div class="contact-form-wrap">
+
+      <h3 class="form-title">Send Us a Message</h3>
+      <p class="form-sub">We'll get back to you within 24 hours.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Aminu Musa" class="form-input" id="cName"/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+234 800 000 0000" class="form-input" id="cPhone"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@email.com" class="form-input" id="cEmail"/>
+      </div>
+
+      <div class="form-group">
+        <label>I Am Interested In</label>
+        <select class="form-input" id="cInterest">
+          <option value="" disabled selected>Select an option</option>
+          <option>Buying a Property</option>
+          <option>Renting a Property</option>
+          <option>Land / Investment</option>
+          <option>Shortlet</option>
+          <option>Listing My Property</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us what you're looking for…"
+                  class="form-input form-textarea"
+                  id="cMessage" rows="4"></textarea>
+      </div>
+
+      <button class="form-submit" id="contactSubmit">
+        Send Message
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+
+      <!-- Success message -->
+      <div class="form-success" id="formSuccess">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <div>
+          <strong>Message Sent!</strong>
+          <span>We'll contact you within 24 hours.</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+
+  <!-- Top section -->
+  <div class="footer-top">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span class="logo-btc">BTC</span>
+        <span class="logo-tag">Better Than Choice</span>
+      </div>
+      <p class="footer-about">
+        Nigeria's most trusted real estate company.
+        We connect people to premium properties across the country —
+        with integrity, speed, and excellence.
+      </p>
+      <!-- Socials -->
+      <div class="footer-socials">
+        <a href="#" class="social-link" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Twitter/X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/2348100000000" class="social-link" aria-label="WhatsApp" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="admin.html">Admin Portal</a></li>
+      </ul>
+    </div>
+
+    <!-- Property Types -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Property Types</h4>
+      <ul class="footer-links">
+        <li><a href="#">Houses for Sale</a></li>
+        <li><a href="#">Apartments for Rent</a></li>
+        <li><a href="#">Land & Plots</a></li>
+        <li><a href="#">Shortlets</a></li>
+        <li><a href="#">Commercial Spaces</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Plot 45, Maitama, Abuja, FCT
+        </li>
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          <a href="tel:+2348100000000">+234 810 000 0000</a>
+        </li>
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@btcrealty.com">info@btcrealty.com</a>
+        </li>
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Mon – Sat, 8am – 6pm
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Divider -->
+  <div class="footer-divider"></div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <p class="footer-copy">
+      © 2024 BTC Realty. All rights reserved.
+    </p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <span>·</span>
+      <a href="#">Terms of Service</a>
+      <span>·</span>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
